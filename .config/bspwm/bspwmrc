@@ -1,0 +1,28 @@
+#! /bin/sh
+
+$HOME/.config/polybar/launch.sh
+pgrep -x sxhkd > /dev/null || sxhkd &
+xsetroot -cursor_name left_ptr
+
+bspc monitor -d I II III IV
+
+bspc config ignore_ewmh_struts   true
+
+bspc config border_width         3
+bspc config window_gap           10
+bspc config top_padding          70
+
+bspc config focused_border_color "#96CDF8"
+bspc config normal_border_color "#6E6C7E"
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focus_follows_pointer true
+
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
