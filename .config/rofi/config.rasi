@@ -17,7 +17,7 @@ configuration{
     dpi: 144;
 }
 
-@theme "catppuccin"
+@theme "tokyonight"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
@@ -28,7 +28,7 @@ window {
     height: 560px;
     width: 1000;
     border: 3px;
-    border-color: @blue;
+    border-color: @border-col;
     background-color: @bg-col;
 }
 

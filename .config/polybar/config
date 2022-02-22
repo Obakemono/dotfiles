@@ -42,7 +42,7 @@ wm-restack = bspwm
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 3
+border-size = 0
 border-color = ${colors.blue}
 
 padding-left = 0
