@@ -2,10 +2,11 @@ Xft.dpi: 144
 
 URxvt.scrollBar: false
 !URxvt.internalBorder: 10
-*.internalBorder: 10
+*.internalBorder: 16
 
 !*.font:xft:Hack:style=Regular:size=12:antialias=true
 *.font:xft:JetBrainsMono Nerd Font:size=12:antialias=true
+!*.font:xft:Material Design Icons:style=Regular:size=12:antialias=true
 
 *foreground:   #A9B1D6
 *background:   #1A1B26

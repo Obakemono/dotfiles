@@ -23,12 +23,13 @@ red = ${xrdb:color1:#222}
 green = ${xrdb:color2:#222}
 yellow = ${xrdb:color3:#222}
 blue = ${xrdb:color4:#2222}
+magenta = ${xrdb:color5:#2222}
 alert = #bd2c40
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 2540
-height = 54
+height = 52
 dpi-x = 144
 dpi-y = 144
 offset-x = 10
@@ -42,7 +43,7 @@ wm-restack = bspwm
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 0
+border-size = 3
 border-color = ${colors.blue}
 
 padding-left = 0
@@ -51,11 +52,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = JetBrainsMono Nerd Font:style=Regular:size=12;5
-font-1 = Material Design Icons:style=Regular:size=20;7
+font-0 = JetBrainsMono Nerd Font:style=Regular:size=11;5
+font-1 = Material Design Icons:style=Regular:size=16;7
 
 modules-left = bspwm
-modules-center = 
+modules-center = mpd
 modules-right = wlan eth pulseaudio xsecurelock battery temperature date xkeyboard powermenu
 
 tray-position = right
@@ -66,6 +67,7 @@ tray-padding = 2
 ;wm-restack = i3
 
 ;override-redirect = true
+enable-ipc = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -76,6 +78,17 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -85,7 +98,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = "󰌌 "
-format-prefix-foreground = ${colors.green}
+format-prefix-foreground = ${colors.foreground}
 label-layout = %layout%
 
 ;label-indicator-padding = 0
@@ -95,7 +108,7 @@ label-layout = %layout%
 type = custom/text
 content = %{A1:xsecurelock:}Lock%{A}
 content-prefix = %{A1:xsecurelock:}󰌿 %{A}
-content-prefix-foreground = ${colors.red}
+content-prefix-foreground = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
@@ -105,7 +118,7 @@ label-focused-foreground = ${colors.blue}
 label-focused-padding = 2
 
 label-occupied = 󰝦
-label-occupied-foreground = ${colors.blue}
+label-occupied-foreground = ${colors.red}
 label-occupied-padding = 2
 
 label-urgent = 󰥕
@@ -113,7 +126,7 @@ label-urgent-background = ${colors.yellow}
 label-urgent-padding = 2
 
 label-empty = 󰝦
-label-empty-foreground = ${colors.green}
+label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 
 [module/wlan]
@@ -125,7 +138,7 @@ format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 
 format-disconnected = 󰤮
-format-disconnected-foreground = ${colors.blue}
+format-disconnected-foreground = ${colors.foreground}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -136,7 +149,7 @@ ramp-signal-1 = 󰤟
 ramp-signal-2 = 󰤢
 ramp-signal-3 = 󰤥
 ramp-signal-4 = 󰤨
-ramp-signal-foreground = ${colors.blue}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -144,7 +157,7 @@ interface = enp0s31f6
 interval = 3.0
 
 format-connected-prefix = "󰈀 "
-format-connected-prefix-foreground = ${colors.blue}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -164,7 +177,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 󰃰
-format-prefix-foreground = ${colors.green}
+format-prefix-foreground = ${colors.foreground}
 
 label = %date% %time%
 
@@ -175,12 +188,12 @@ format-volume = <ramp-volume> <label-volume>
 label-volume =  %percentage%%
 
 label-muted = 󰝟 muted
-label-muted-foreground = ${colors.red}
+label-muted-foreground = ${colors.foreground}
 
 ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
 ramp-volume-2 = 󰕾
-ramp-volume-foreground = ${colors.red}
+ramp-volume-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -193,14 +206,14 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
 format-full-prefix = "󰁹 "
-format-full-prefix-foreground = ${colors.yellow}
+format-full-prefix-foreground = ${colors.foreground}
 
 animation-charging-0 = 󰂆
 animation-charging-1 = 󰂈
 animation-charging-2 = 󰂉
 animation-charging-3 = 󰂊
 animation-charging-4 = 󰂅
-animation-charging-foreground = ${colors.yellow}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 1500
 
 animation-discharging-0 = 󰁹
@@ -208,7 +221,7 @@ animation-discharging-1 = 󰂁
 animation-discharging-2 = 󰁿
 animation-discharging-3 = 󰁽
 animation-discharging-4 = 󰁻
-animation-discharging-foreground = ${colors.yellow}
+animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 1500
 
 [module/temperature]
@@ -226,7 +239,7 @@ label-warn-foreground = ${colors.red}
 ramp-0 = 󱃃
 ramp-1 = 󰔏
 ramp-2 = 󱃂
-ramp-foreground = ${colors.yellow}
+ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu

@@ -118,7 +118,7 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-1 0,0 1,0 -1,1 0}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # change split orientation
 super + r
@@ -151,3 +151,11 @@ XF86AudioMute
 # Fn microphone mute toggle
 XF86AudioMicMute
         pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+#
+# screenshots
+#
+
+Print
+        scrot ~/images/screenshot_%d%m%y_%H%M%S.png -q 75

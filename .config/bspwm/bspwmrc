@@ -10,10 +10,10 @@ bspc config ignore_ewmh_struts   true
 
 bspc config border_width         3
 bspc config window_gap           10
-bspc config top_padding          64
+bspc config top_padding          68
 
-bspc config focused_border_color "#414868"
-bspc config normal_border_color "#24283B"
+bspc config focused_border_color "#7AA2F7"
+bspc config normal_border_color "#A9B1D6"
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
