@@ -55,8 +55,9 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-setxkbmap es &
+setxkbmap es,us -variant ,altgr-intl -option grp:rctrl_toggle &
 ~/.fehbg &
-picom -b
+#picom -b
+xset -b
 xiccd &
 exec bspwm

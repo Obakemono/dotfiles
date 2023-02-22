@@ -52,8 +52,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = JetBrainsMono Nerd Font:style=Regular:size=11;5
-font-1 = Material Design Icons:style=Regular:size=16;7
+font-0 = Material Design Icons:style=Regular:size=16;6
+font-1 = JetBrainsMono Nerd Font:style=Regular:size=12;4
 
 modules-left = bspwm
 modules-center = mpd
@@ -61,6 +61,7 @@ modules-right = wlan eth pulseaudio xsecurelock battery temperature date xkeyboa
 
 tray-position = right
 tray-padding = 2
+tray-maxsize = 64
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm

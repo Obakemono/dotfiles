@@ -1,5 +1,6 @@
 Xft.dpi: 144
 
+URxvt.geometry: 400x400
 URxvt.scrollBar: false
 *.internalBorder: 16
 
